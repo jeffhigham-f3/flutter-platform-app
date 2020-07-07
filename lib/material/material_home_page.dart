@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:platform_app/config.dart';
 import 'package:provider/provider.dart';
+import 'package:platform_app/screens/screen_one.dart';
 
 class MaterialHomePage extends StatefulWidget {
+  static const String id = 'material_home_page';
+
   MaterialHomePage({Key key}) : super(key: key);
   @override
   _MaterialHomePageState createState() => _MaterialHomePageState();
@@ -20,8 +23,13 @@ class _MaterialHomePageState extends State<MaterialHomePage> {
         children: <Widget>[
           Center(
             child: MaterialButton(
-              child: Text('Press Me'),
-              onPressed: () => {print('Android pressed!')},
+              child: Text('Navigate To Screen One'),
+              onPressed: () => {
+                Navigator.pushNamed(
+                  context,
+                  ScreenOne.id,
+                ),
+              },
             ),
           ),
         ],
